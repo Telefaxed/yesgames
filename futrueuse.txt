@@ -1,0 +1,1 @@
+<span style="font-size:30px;cursor:pointer; display: block; text-align: center;" onclick="openNav()">&#9776; open</span>

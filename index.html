@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Link to IBM Plex Mono font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<style>
+
+body {
+  font-family: 'IBM Plex Mono', monospace; /* Apply IBM Plex Mono */
+  color: #FFFFFF;
+  background-color: #222222;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.fixedbutton {
+    position: fixed;
+    bottom: 2%;
+    right: 91%; 
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: #006666;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px #32BBBF;
+}
+
+button:active {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px #a29bfe;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 35px;
+  color: #AAAAAA;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #33FFCC;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 40px;
+  margin-left: 50px;
+}
+
+#header {
+  text-align: center;
+  margin-top: 20px;
+  background-color: #006666;
+  color: #FFFFFF;
+  font-size: 25px;
+  padding-bottom: 1px;
+  padding-top: 1px;
+}
+
+#subheader {
+  background-color: #32BBBF;
+  color: #000000;
+  padding: 1px;
+}
+
+#small {
+  font-size: 15px;
+}
+
+/* Card Styling */
+.card {
+  background-color: #444444;
+  border-radius: 8px;
+  width: 300px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border: 2px solid #32BBBF; /* Add the light teal border */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card h3 {
+  color: #FFFFFF;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav { padding-top: 15px; }
+  .sidenav a { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Link</a>
+  <a href="#">Another Link</a>
+  <a href="#">Yet Another Link</a>
+  <a href="#">The Last Link</a>
+</div>
+
+<div id="header">
+  <h2><strong>- YESGAMES -</strong></h2>
+</div>
+<div id="subheader">
+  <p style="text-align: center;"><b>Welcome to YESGAMES, with the best selection of games to cure your boredom!</b></p>
+</div>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <a href="/games/fruitslicer/index.html">
+      <img src="/thumbnails/fs.jpeg" alt="Fruit Slicer Image">
+      <h3>Fruit Slicer</h3>
+      </a>
+    </div>
+     <div class="card">
+      <a href="/games/cookieclicker/index.html">
+      <img src="/thumbnails/cookie.jpeg" alt="Cookie Clicker">
+      <h3>Cookie Clicker</h3>
+      </a>
+    </div>
+  </div>
+   <div class="column">
+     <div class="card">
+      <a href="/games/2048/index.html">
+      <img src="/thumbnails/2048.jpeg" alt="2048">
+      <h3>2048</h3>
+      </a>
+     </div>
+     <div class="card">
+      <a href="/games/asteroids/index.html">
+      <img src="/thumbnails/aster.jpeg" alt="Asteroids">
+      <h3>Asteroids</h3>
+      </a>
+     </div>
+    </div>
+  <div class="column">
+    <div class="card">
+    <a href="/games/chess/index.html">
+    <img src="/thumbnails/chess.jpeg" alt="chess">
+    <h3>Chess 3D</h3>
+    </a>
+  </div>
+</div>
+</div>
+
+<span class="fixedbutton" style="font-size:30px;cursor:pointer; display: block; text-align: center;" onclick="setTimeout(openNav(), 1)"><button>&#9776; Menu</button></span>
+  
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%"; /* Sidebar expands to full width */
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
+</html>
